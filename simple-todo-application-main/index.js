@@ -44,7 +44,12 @@ function onUpdateIsDone(task) {
 
     // 達成状態を更新(このままだと、現在の達成状態で更新されてしまう！)
     const currentValue = task.isDone;
-    task.isDone = currentValue;
+    if(currentValue==false){
+        task.isDone=true;
+    }
+    else if(currentValue==true){
+        task.isDone=false;
+    }
 
     return task;
 }
